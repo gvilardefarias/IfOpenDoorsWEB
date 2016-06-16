@@ -1,0 +1,63 @@
+<html lang="pt" ng-app="ifopendoors">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+      .jumbotron {        
+        margin-top: 7%;
+        background-color: rgba(0, 0, 0, 0.1); 
+      }
+
+      body {
+        background-color: #4e83b1;
+      }
+
+      .invisible{
+        text-color: #4e83b1;
+      }
+
+      .form{
+        margin-top: 10%;
+      }
+
+      .btn{
+        margin-top: 15%;
+      }
+    </style>
+
+    <script>    
+      angular.module('ifopendoors', []);
+      angular.module("ifopendoors").controller("ifopendoorsCtrl", function ($scope) {
+        $scope.loginValidation = function (login) {
+          return;
+        };
+      });
+    </script>        
+  </head>
+
+  <body ng-controller="ifopendoorsCtrl">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4 jumbotron">
+          <center><img class="img" src="logoP.png" width="35%" height="20%"/></center>
+
+          <input class="form-control form" ng-model="login.email" type="email" placeholder="Email">
+          <input class="form-control" ng-model="login.senha" type="password" placeholder="Senha"> 
+          
+          <button type="submit" class="btn btn-success btn-block" ng-click="loginValidation(login)" ng-disabled="!login.email || !login.senha">Login</button>
+        </div>
+
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+  </body>
+</html>
