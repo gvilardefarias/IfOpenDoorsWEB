@@ -1,0 +1,127 @@
+<html lang="pt" ng-app="ifopendoors">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <style>
+      body{
+        background-color: white;
+      }
+
+      .barra{
+        background-color: #4e83b1;
+        height: 100%;
+        margin-top: -50px;
+        border-radius: 5px;
+      }
+
+      .prin{
+        color: white;
+        margin-left: 5px;
+        font-size: 15;
+        margin-right: 225px;
+      }
+
+      .top{
+        color: white;
+        margin-left: 25px;
+        margin-top: -13px;
+        font-size: 13;
+      }
+
+      .dentro{
+        font-size: 20;
+        color: white;
+      }
+
+      .fora{
+        font-size: 20;
+        color: white;
+        margin-top: -50px;
+      }
+
+      .barraCima{
+        background-color: #4e83b1;
+        border-radius: 5px;
+        margin-top: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 20;
+        color: white;
+      }
+
+      .nav-pills>li>a:hover,
+      .nav-pills>li>a:focus,
+      .nav-pills>li>a:active {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+    </style>
+
+    <script>    
+      angular.module('ifopendoors', []);
+      angular.module("ifopendoors").controller("ifopendoorsCtrl", function ($scope) {
+        $scope.salasOpcaos = ['Gerenciar', 'Adicionar'];
+        $scope.pessoasOpcaos = ['Gerenciar', 'Adicionar'];
+
+        $scope.salasShow = false;
+        $scope.pessoasShow = false;
+
+
+        $scope.barraInvisivel = function () {
+          $scope.show = false;
+        };
+        $scope.barraVisivel = function () {
+          $scope.show = true;
+        };
+
+        $scope.salasOptions = function () {
+          $scope.salasShow = !$scope.salasShow;
+        };
+        $scope.pessoasOptions = function () {
+          $scope.pessoasShow = !$scope.pessoasShow;
+        };
+      });
+    </script>        
+  </head>
+
+  <body ng-controller="ifopendoorsCtrl">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <center><h4 class="barraCima"><b>IfOpenDoors</b></h4></center>
+          <button ng-show="!show" class="btn btn-link" ng-click="barraVisivel()">
+            <span class="glyphicon glyphicon-menu-hamburger fora"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3" ng-show="show">          
+
+          <nav class="affix barra" >
+            <div align="left">
+              <button type="button" class="btn btn-link" ng-click="barraInvisivel()">
+                <span class="glyphicon glyphicon-menu-hamburger dentro"></span>
+              </button>
+            </div>
+            <center><img width="80px" height="80px" alt="Brand" src="logo.png"></center>
+            <p></p>
+            <ul class="nav nav-pills nav-stacked">
+              <li><a href="#" ng-click="salasOptions()"><div class="prin">Salas</div></a></li>
+              <li ng-show="salasShow" ng-repeat="opcao in salasOpcaos"><a href="#"><div class="top">{{opcao}}</div></a></li>
+              <li><a href="#" ng-click="pessoasOptions()"><div class="prin">Pessoas</div></a></li>
+              <li ng-show="pessoasShow" ng-repeat="opcao in pessoasOpcaos"><a href="#"><div class="top">{{opcao}}</div></a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-md-9"></div>
+      </div>
+    </div>
+  </body>
+</html>
