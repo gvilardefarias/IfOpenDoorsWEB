@@ -9,29 +9,45 @@
     <script src="js/bootstrap.min.js"></script>
 
     <style>
-      .jumbotron {        
-        margin-top: 7%;
-        background-color: rgba(0, 0, 0, 0.1); 
+      .barraCima{
+        background-color: #4e83b1;
+        margin-top: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 25;
+        color: white;
+      }
+
+      .barra{
+        position: absolute;
+        background-color: #4e83b1;
+        width: 100%;
+        bottom: 0px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .jumbotron {
+        margin-top: 40px;
+        margin-right: auto;
+        margin-left: auto;        
+        background-color: #4e83b1; 
       }
 
       body {
-        background-color: #4e83b1;
-      }
-
-      a{
-        color:black;
+        background-color: #eeeeee;
       }
 
       .invisible{
-        color: #4e83b1;
+        text-color: #4e83b1;
       }
 
       .form{
-        margin-top: 10%;
+        margin: auto;
       }
 
       .btn{
-        margin-top: 15%;
+        margin-top: 40px;
       }
     </style>
 
@@ -44,23 +60,33 @@
       });
     </script>        
   </head>
-
   <body ng-controller="ifopendoorsCtrl">
+    <center><h4 class="barraCima"><b>IfOpenDoors</b></h4></center>
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4"></div>
-
         <div class="col-md-4 jumbotron">
-          <center><img class="img" src="logoP.png" width="125px" height="125px"/></center>
 
-          <input class="form-control form" ng-model="login.email" type="email" placeholder="Email">
-          <input class="form-control" ng-model="login.senha" type="password" placeholder="Senha"> 
-          
+          <center><img class="img" src="logoP.png" width="150px" height= "150px"/></center>
+
+          <div class="input-group">
+            <span class="input-group-addon">@</span>
+            <input type="email" ng-model="login.email" class="form-control" placeholder="Email">
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon glyphicon glyphicon-lock"></span>          
+            <input type="password" ng-model="login.senha" class="form-control" placeholder="Senha">
+          </div>
+
           <button type="submit" class="btn btn-success btn-block" ng-click="loginValidation(login)" ng-disabled="!login.email || !login.senha">Login</button>
         </div>
-
         <div class="col-md-4"></div>
       </div>
+      <div class="row">
+        <div class="col-md-12 barra">
+          <img class="img" src="ladoss-branco.png" width="200px" height="40px" align="right" />       
+        </div>
     </div>
   </body>
 </html>
