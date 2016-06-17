@@ -72,7 +72,8 @@
       .nav-pills>li>a:hover,
       .nav-pills>li>a:focus,
       .nav-pills>li>a:active {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: white;
+        border-left: 4px solid #4e83b1;
       }
     </style>
 
@@ -82,22 +83,15 @@
         $scope.salasOpcaos = ['Gerenciar', 'Adicionar'];
         $scope.pessoasOpcaos = ['Gerenciar', 'Adicionar'];
 
-        $scope.salasShow = false;
-        $scope.pessoasShow = false;
-
-
-        $scope.barraInvisivel = function () {
-          $scope.show = false;
-        };
         $scope.barra = function () {
           $scope.show = !$scope.show;
         };
 
         $scope.salasOptions = function () {
-          $scope.salasShow = !$scope.salasShow;
+          $scope.shows = 'sala';
         };
         $scope.pessoasOptions = function () {
-          $scope.pessoasShow = !$scope.pessoasShow;
+          $scope.shows = 'pessoa';
         };
       });
     </script>        
@@ -114,7 +108,7 @@
       </div>
 
     <div ng-show="show">
-      <div class="ofusca"></div>
+      <div class="ofusca" ng-click="barra()"></div>
 
       <nav class="affix barra">
         <div align="left">
@@ -126,24 +120,24 @@
         <p></p>
         <ul class="nav nav-pills nav-stacked">
           <li><a href="#" ng-click="salasOptions()"><div class="prin">Salas</div></a></li>
-          <li ng-show="salasShow" ng-repeat="opcao in salasOpcaos"><a href="#"><div class="top">{{opcao}}</div></a></li>
+          <li ng-show="shows=='sala'" ng-repeat="opcao in salasOpcaos"><a href="#"><div class="top">{{opcao}}</div></a></li>
           <li><a href="#" ng-click="pessoasOptions()"><div class="prin">Pessoas</div></a></li>
-          <li ng-show="pessoasShow" ng-repeat="opcao in pessoasOpcaos"><a href="#"><div class="top">{{opcao}}</div></a></li>
+          <li ng-show="shows=='pessoa'" ng-repeat="opcao in pessoasOpcaos"><a href="#"><div class="top">{{opcao}}</div></a></li>
         </ul>
       </nav>
     </div>
 
     <div>
+      <div class="col-md-4"></div>
+      
+      <div class="col-md-4">
+        <center><button class="btn btn-default">Botão 1</button></center>
+        <p></p>
+        <p></p>
+        <input class="form-control form" ng-model="login.email" type="text" placeholder="Nome">
+      </div>
 
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-          <center><button class="btn btn-default">Botão 1</button></center>
-          <p></p>
-          <p></p>
-          <input class="form-control form" ng-model="login.email" type="text" placeholder="Nome">
-        </div>
-        <div class="col-md-4"></div>
+      <div class="col-md-4"><hr size="200" width="23" color="black"></div>
     </div>
-
   </body>
 </html>
