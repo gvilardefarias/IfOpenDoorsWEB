@@ -10,6 +10,9 @@
 
     <style>
       .barraCima{
+        position: fixed !important;
+        z-index:11;
+        width: 100%;
         background-color: #4e83b1;
         margin-top: 0px;
         padding-top: 20px;
@@ -18,17 +21,21 @@
         color: white;
       }
 
-      .barra{
-        position: absolute;
+      .rodape{
+        position: fixed !important;
+        z-index: 2;
         background-color: #4e83b1;
         width: 100%;
         bottom: 0px;
         padding-top: 15px;
         padding-bottom: 15px;
+        padding-left: 100px;
+        padding-right: 100px;
       }
 
       .jumbotron {
-        margin-top: 40px;
+        margin-top: 110px;
+        margin-bottom: 90px;
         margin-right: auto;
         margin-left: auto;        
         background-color: #4e83b1; 
@@ -64,10 +71,10 @@
     <center><h4 class="barraCima"><b>IfOpenDoors</b></h4></center>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4 jumbotron">
+        <div class="col-md-4 col-sm-2 col-xs-1"></div>
+        <div class="col-md-4 jumbotron col-sm-8 col-xs-10">
 
-          <center><img class="img" src="logoP.png" width="150px" height= "150px"/></center>
+          <center><img class="img" src="img/logoP.png" width="150px" height= "150px"/></center>
 
           <div class="input-group">
             <span class="input-group-addon">@</span>
@@ -81,12 +88,14 @@
 
           <button type="submit" class="btn btn-success btn-block" ng-click="loginValidation(login)" ng-disabled="!login.email || !login.senha">Login</button>
         </div>
-        <div class="col-md-4"></div>
+        <div class="col-md-4 col-sm-2 col-xs-1"></div>
       </div>
       <div class="row">
-        <div class="col-md-12 barra">
-          <img class="img" src="ladoss-branco.png" width="200px" height="40px" align="right" />       
+        <div class="col-md-12 rodape">
+          <img class="img" src="img/ifpb-branco.png" width="150px" height="50px" align="left" />
+          <img class="img" src="img/ladoss-branco.png" width="200px" height="40px" align="right" />       
         </div>
+      </div>
     </div>
   </body>
 </html>
