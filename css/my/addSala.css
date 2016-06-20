@@ -2,6 +2,12 @@
   background-color: #eeeeee;
  }
 
+.save{
+  text-align: right;
+  font-size: 22;
+  color: black;
+}
+
 .barra{
   position: fixed !important;
   background-color: white;

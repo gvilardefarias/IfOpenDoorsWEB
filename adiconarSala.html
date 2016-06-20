@@ -28,7 +28,7 @@
             <span class="glyphicon glyphicon-menu-hamburger dentro"></span>
           </button>
         </div>
-        <center><img width="80px" height="80px" alt="Brand" src="img/logo.png"></center>
+        <center><img width="80px" height="80px" alt="Brand" src="img/logoTT.png"></center>
         <p></p>
         <ul class="nav nav-pills nav-stacked">
           <li><a href="#" ng-click="salasOptions()"><div class="prin">Salas</div></a></li>
@@ -44,6 +44,12 @@
       
       <div class="col-md-6">
         <form class="well">
+          <div class="save">
+            <button class="btn btn-link save" ng-click="addSala()" ng-disabled="!ok(escolha)">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </div>
+
           <div class="form-group">
             <label>Tipo</label>
             <select class="form-control" ng-model="escolha.tipo">
@@ -62,7 +68,6 @@
 
           <button type="button" class="btn btn-block btn-danger" ng-show="!escolha.porta" data-toggle="modal" data-target="#escolhePorta">Escolher Porta</button>
           <button type="button" class="btn btn-block btn-success" ng-show="escolha.porta" data-toggle="modal" data-target="#escolhePorta">Porta Já Escolhida</button>
-          <button type="submit" class="btn btn-primary btn-block btn-lg" ng-disabled="!ok(escolha)">Adicionar</button>
         </form>
       </div>
 
